@@ -1,38 +1,99 @@
-.App {
-  text-align: center;
+html, body, div, h1, h2, h3, h4, h5, h6,
+p, select, button, input, option {
+  margin: 0;
+  padding: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+img {
+  display: block;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
+/* Initialization End */
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.app {
+  height: 100vh;
+  padding-top: 10vh;
+  box-sizing: border-box;
+
+  background-color: #ccc;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.exchanger {
+  min-width: 70vh;
+  margin-top: 30px;
+  display: flex;
+  justify-content: stretch;
+  align-items: flex-end;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.exchanger .labeled {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  width: 33%;
+}
+
+.exchanger > .from {
+  margin-left: 5px;
+}
+
+.exchanger .labeled input,
+.exchanger .labeled select {
+  outline: none;
+  height: 50px;
+  box-sizing: border-box;
+  border-radius: 10px;
+  border: 1px solid #333;
+  font-size: 20px;
+}
+
+p {
+  padding-top: 10px;
+  font-size: 20px;
+  font-family: 'microsoft yahei';
+}
+
+select {
+  direction: rtl;
+}
+
+input {
+  text-align: right;
+  font-size: 20px;
+}
+
+
+button {
+  height: 50px;
+  padding: 0 5px;
+  border-radius: 10px;
+  margin: 0 5px;
+  border: 1px solid #cfcfcf;
+  cursor: pointer;
+  font-size: 20px;
+  background-color: #5fbaa7;
+  color:white;
+}
+
+button:hover {
+  background-color: teal;
+}
+
+.rate {
+  color: #5fbaa7;
+}
+
+.result {
+  padding-top: 20px;
+  text-align: center;
+}
+.result h2{
+  font-size: 40px;
+}
+
+.result p {
+  font-size: 35px;
 }
