@@ -13,38 +13,47 @@ class App extends Component {
       currencyTwo: "EUR",
       amountOne: 0
     };
-
-    this.handleChangeTop = this.handleChangeTop.bind(this);
-    this.updateCurrencyRate = this.updateCurrencyRate.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+    this.updateState = this.updateState.bind(this);
   }
 
-  //use bind
-  handleChangeTop(event) {
-    this.setState({ currencyOne: event.target.value });
-    this.updateCurrencyRate()
+ //use bind
+  handleChange(event, key) {
+    let obj = {};
+    obj[key] = event.target.value;
+    this.setState(obj, () => {
+      this.fetchData(this.state.currencyOne, this.updateState);
+    });
   }
 
-  swap = () => {
-    this.setState({ currencyOne: this.state.currencyTwo, currencyTwo: this.state.currencyOne });
-    console.log("before:" + this.state.currencyOne);
-    this.updateCurrencyRate()
-    console.log("after:" + this.state.currencyOne);
+  swap = ()=> {
+    //if click too fast will occur bug
+    this.fetchData(this.state.currencyTwo, this.updateState)
+    this.setState({currencyOne: this.state.currencyTwo, currencyTwo:this.state.currencyOne});
+
+    //this.fetchData(this.state.currencyTwo, this.state.currencyOne, this.updateState);
   }
 
-  updateCurrencyRate() {
-    fetch(`https://api.exchangerate-api.com/v4/latest/${this.state.currencyOne}`)
+  updateState(rates) {
+    this.setState({
+      //  currencyOne:fromCurrency,
+      //  currencyTwo:toCurrency,
+        items:rates
+    });
+  }
+
+  fetchData(fromCurrency, callback) {
+    fetch(`https://api.exchangerate-api.com/v4/latest/${fromCurrency}`)
       .then(res => res.json())
       .then(
         (result) => {
-          this.setState({
-            items: result.rates
-          });
+          callback(result.rates);
         },
       )
   }
 
   componentDidMount() {
-    this.updateCurrencyRate()
+    this.fetchData(this.state.currencyOne, this.updateState);
   }
 
   render() {
@@ -60,7 +69,7 @@ class App extends Component {
           </div>
           <div className="from labeled">
             <label for="from">From</label>
-            <select id="from" defaultValue="USD" value={this.state.currencyOne} onChange={this.handleChangeTop}>
+            <select id="from" defaultValue="USD" value={this.state.currencyOne} onChange={(e) => this.handleChange(e, 'currencyOne')}>
               <Option />
             </select>
           </div>
@@ -69,11 +78,9 @@ class App extends Component {
           </div>
           <div className="to labeled">
             <label for="to">To</label>
-            {/*use arrow function to bind */}
             <select id="to" defaultValue="EUR" value={this.state.currencyTwo}
               onChange={(e) => {
-                this.setState({ currencyTwo: e.target.value });
-                this.componentDidMount();
+                   this.handleChange(e, "currencyTwo");
               }}>
               <Option />
             </select>
