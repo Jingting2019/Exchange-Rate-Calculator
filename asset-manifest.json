@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/Jingting2019/Exchange-Rate-Calculator/static/css/main.be39955c.chunk.css",
+    "main.js": "/Jingting2019/Exchange-Rate-Calculator/static/js/main.5d1e29cf.chunk.js",
+    "main.js.map": "/Jingting2019/Exchange-Rate-Calculator/static/js/main.5d1e29cf.chunk.js.map",
+    "runtime-main.js": "/Jingting2019/Exchange-Rate-Calculator/static/js/runtime-main.2acbcca1.js",
+    "runtime-main.js.map": "/Jingting2019/Exchange-Rate-Calculator/static/js/runtime-main.2acbcca1.js.map",
+    "static/js/2.e7af3a75.chunk.js": "/Jingting2019/Exchange-Rate-Calculator/static/js/2.e7af3a75.chunk.js",
+    "static/js/2.e7af3a75.chunk.js.map": "/Jingting2019/Exchange-Rate-Calculator/static/js/2.e7af3a75.chunk.js.map",
+    "index.html": "/Jingting2019/Exchange-Rate-Calculator/index.html",
+    "precache-manifest.884907dade01a6f845c464f223d005f7.js": "/Jingting2019/Exchange-Rate-Calculator/precache-manifest.884907dade01a6f845c464f223d005f7.js",
+    "service-worker.js": "/Jingting2019/Exchange-Rate-Calculator/service-worker.js",
+    "static/css/main.be39955c.chunk.css.map": "/Jingting2019/Exchange-Rate-Calculator/static/css/main.be39955c.chunk.css.map",
+    "static/js/2.e7af3a75.chunk.js.LICENSE.txt": "/Jingting2019/Exchange-Rate-Calculator/static/js/2.e7af3a75.chunk.js.LICENSE.txt",
+    "static/media/money.png": "/Jingting2019/Exchange-Rate-Calculator/static/media/money.8ebfab8f.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.2acbcca1.js",
+    "static/js/2.e7af3a75.chunk.js",
+    "static/css/main.be39955c.chunk.css",
+    "static/js/main.5d1e29cf.chunk.js"
+  ]
+}
